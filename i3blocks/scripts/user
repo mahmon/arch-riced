@@ -13,7 +13,7 @@ my $user_icon;
 my $user_name;
 my $full_text;
 
-$user_icon = "";
+$user_icon = "<span font_family='fa-solid-900'>\N{U+F007}</span>";
 $user_name = `lslogins | grep \$USER | awk '{print \$5,\$NF}'`;
 $full_text = "${user_icon} ${user_name}";
 

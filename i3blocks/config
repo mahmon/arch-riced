@@ -16,14 +16,17 @@ separator_block_width=20
 command=scripts/battery
 markup=pango
 interval=3
+color=#eeeeee
 
 [User]
 command=scripts/user
 markup=pango
 interval=once
+color=#eeeeee
 
 [Arch Logo]
 command=scripts/archlogo
 markup=pango
 interval=once
+color=#eeeeee
 
