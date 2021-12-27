@@ -1,0 +1,23 @@
+#!/usr/bin/env perl
+#
+# Perl script to add day and time
+# Requires package ttf-font-awesome
+# Available in the AUR
+#
+
+use strict;
+use warnings;
+use utf8;
+
+my $clock_icon;
+my $day_time;
+my $full_text;
+
+$clock_icon = "<span font_family='fa-solid-900'>\N{U+F017}</span>";
+$day_time = `date +"%a %H:%M"`;
+$full_text = "${clock_icon} ${day_time}";
+
+print "$full_text\n";
+
+exit(0);
+

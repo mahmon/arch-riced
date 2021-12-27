@@ -15,18 +15,25 @@ separator_block_width=20
 [Battery]
 command=scripts/battery
 markup=pango
-interval=3
 color=#eeeeee
+interval=3
+
+[Time]
+#command=date +"%a %H:%M"
+command=scripts/time
+markup=pango
+color=#eeeeee
+interval=1
 
 [User]
 command=scripts/user
 markup=pango
-interval=once
 color=#eeeeee
+interval=once
 
 [Arch Logo]
 command=scripts/archlogo
 markup=pango
-interval=once
 color=#eeeeee
+interval=once
 

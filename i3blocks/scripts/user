@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 #
-# Perl script to add User name and Icon to i3Blocks
+# Perl script to add user name and icon to i3Blocks
 # Requires package ttf-font-awesome
 # Available in the AUR
 #
