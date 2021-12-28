@@ -10,7 +10,7 @@
 ICON=$(echo -e '\uF007')
 NAME=$(lslogins | grep $USER | awk '{print $5,$NF}')
 
-echo "$ICON $NAME"
+echo " $ICON $NAME  "
 
 exit 0
 

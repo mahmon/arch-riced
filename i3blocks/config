@@ -9,33 +9,45 @@
 # Global properties
 
 separator=false
-separator_block_width=20
+separator_block_width=0
 
 
 # Blocks
 
+[Volume]
+command=scripts/volume
+markup=pango
+# background=#db304190
+color=#eeeeee
+interval=once
+signal=10
+
 [Battery]
 command=scripts/battery
 markup=pango
+# background=#1793d090
 color=#eeeeee
 interval=3
 
 [Time]
 command=scripts/time
 markup=pango
+# background=#db304190
 color=#eeeeee
 interval=1
 
 [User]
 command=scripts/user
 markup=pango
+# background=#1793d090
 color=#eeeeee
 interval=once
 
 [Arch Logo]
-full_text=<span font_family='font-logos'> </span>
+full_text=<span font_family='font-logos'>  </span>
 command=scripts/shutdown_menu
 markup=pango
+# background=#db304190
 color=#1793d0
 interval=0
 

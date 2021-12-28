@@ -10,7 +10,7 @@
 ICON=$(echo -e '\uF017')
 DAY_TIME=$(date +"%a %H:%M")
 
-echo "$ICON $DAY_TIME"
+echo " $ICON $DAY_TIME  "
 
 exit 0
 
