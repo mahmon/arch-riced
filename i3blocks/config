@@ -15,8 +15,14 @@ separator_block_width=0
 
 # Blocks
 
+[wifi]
+command=scripts/wifi
+markup=pango
+# background=#1793d090
+interval=30
+
 [Brightness]
-command=scripts/brightness
+command=scripts/backlight
 markup=pango
 # background=#1793d090
 color=#eeeeee

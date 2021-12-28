@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Basic bash script:
-# To extract vlume levels from amixer
+# To extract volume levels from amixer
 #
 # Requires package ttf-font-awesome
 # Availabe in the AUR
