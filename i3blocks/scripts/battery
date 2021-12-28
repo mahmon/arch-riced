@@ -9,6 +9,7 @@
 # command (often provided by a package of the same name) to read the status of
 # the battery.
 #
+# Requires package acpi
 # Adapted by Wayne Murphy-Jerrett 
 
 use strict;
@@ -86,7 +87,7 @@ if ($percent < 10) {
 }
 
 $full_text .= " $batt_icon ";
-$full_text .= "$percent%";
+$full_text .= "$percent% ";
 
 
 # print text
@@ -94,7 +95,7 @@ print "$full_text\n";
 
 # consider urgent flag only on discharge
 if ($status eq 'Discharging') {
-	if ($percent < 15) {
+	if ($percent < 10) {
 		exit(33);
 	}
 }

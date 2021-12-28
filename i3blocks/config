@@ -7,11 +7,14 @@
 
 
 # Global properties
+
 separator=false
 separator_block_width=20
 
 
+
 # Blocks
+
 [Battery]
 command=scripts/battery
 markup=pango
@@ -19,7 +22,6 @@ color=#eeeeee
 interval=3
 
 [Time]
-#command=date +"%a %H:%M"
 command=scripts/time
 markup=pango
 color=#eeeeee
@@ -31,9 +33,16 @@ markup=pango
 color=#eeeeee
 interval=once
 
+
+
+
+
+
+
 [Arch Logo]
-command=scripts/archlogo
+full_text=<span font_family='font-logos'> </span>
+command=scripts/shutdown_menu
 markup=pango
-color=#eeeeee
-interval=once
+color=#1793d0
+interval=0
 
