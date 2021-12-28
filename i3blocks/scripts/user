@@ -10,7 +10,7 @@
 ICON=$(echo -e '\uF007')
 NAME=$(lslogins | grep $USER | awk '{print $5,$NF}')
 
-echo " $ICON $NAME  "
+echo "<span font_family='FontAwesome' weight='900'> $ICON</span> $NAME  "
 
 exit 0
 

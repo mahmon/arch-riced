@@ -15,10 +15,17 @@ separator_block_width=0
 
 # Blocks
 
+[Active-Window]
+command=scripts/window
+markup=pango
+# background=#1793d090
+color=#eeeeee
+interval=repeat
+
 [wifi]
 command=scripts/wifi
 markup=pango
-# background=#1793d090
+# background=#db304190
 interval=30
 
 [Brightness]

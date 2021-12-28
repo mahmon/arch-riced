@@ -42,7 +42,7 @@ elsif ($acpi !~ /: ([\w\s]+), (\d+)%/) {
 }
 
 # Get status and use it to set charge state icon
-$chr_icon = " <span font_family='fa-solid-900'> \N{U+F0e7}</span>";
+$chr_icon = "<span font_family='fa-solid-900'> \N{U+F0e7}</span>";
 $dis_icon = "";
 $full_icon = "";
 $status = $1;
