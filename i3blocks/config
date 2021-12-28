@@ -12,7 +12,16 @@ separator=false
 separator_block_width=0
 
 
+
 # Blocks
+
+[Brightness]
+command=scripts/brightness
+markup=pango
+# background=#1793d090
+color=#eeeeee
+interval=once
+signal=10
 
 [Volume]
 command=scripts/volume

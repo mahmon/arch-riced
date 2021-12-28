@@ -207,10 +207,10 @@ bindsym $mod+Shift+z	gaps outer current minus 5
 bindsym $mod+Shift+x exec --no-startup-id i3lock
 
 # Multimedia keybinds
-bindcode $mod+122 exec --no-startup-id  amixer -q set Master 1dB- && pkill -RTMIN+10 i3blocks 
-bindcode $mod+123 exec --no-startup-id  amixer -q set Master 1dB+ && pkill -RTMIN+10 i3blocks 
-bindcode $mod+232 exec --no-startup-id xbacklight -dec 10
-bindcode $mod+233 exec --no-startup-id xbacklight -inc 10
+bindsym XF86AudioRaiseVolume exec --no-startup-id  amixer -q set Master 1dB+ && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioLowerVolume exec --no-startup-id  amixer -q set Master 1dB- && pkill -RTMIN+10 i3blocks 
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 && pkill -RTMIN+10 i3blocks
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 && pkill -RTMIN+10 i3blocks
 
 # Load wallpaper 
 exec_always --no-startup-id feh --bg-scale ~/Wallpaper/lofi-nawpic.png
