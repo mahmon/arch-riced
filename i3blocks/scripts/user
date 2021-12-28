@@ -1,23 +1,16 @@
-#!/usr/bin/env perl
+#!/bin/bash
 #
-# Perl script to add user name and icon to i3Blocks
+# Basic bash script:
+# Can be used later to add functionality to user block.
+# 
 # Requires package ttf-font-awesome
 # Available in the AUR
-#
 
-use strict;
-use warnings;
-use utf8;
 
-my $user_icon;
-my $user_name;
-my $full_text;
+ICON=$(echo -e '\uF007')
+NAME=$(lslogins | grep $USER | awk '{print $5,$NF}')
 
-$user_icon = "<span font_family='fa-solid-900'>\N{U+F007}</span>";
-$user_name = `lslogins | grep \$USER | awk '{print \$5,\$NF}'`;
-$full_text = "${user_icon} ${user_name}";
+echo "$ICON $NAME"
 
-print "$full_text\n";
-
-exit(0);
+exit 0
 

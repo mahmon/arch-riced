@@ -12,7 +12,6 @@ separator=false
 separator_block_width=20
 
 
-
 # Blocks
 
 [Battery]
@@ -32,12 +31,6 @@ command=scripts/user
 markup=pango
 color=#eeeeee
 interval=once
-
-
-
-
-
-
 
 [Arch Logo]
 full_text=<span font_family='font-logos'> </span>
