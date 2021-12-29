@@ -27,6 +27,7 @@ COLOR_GE60=${COLOR_GE60:-#eeeeee}
 COLOR_GE40=${COLOR_GE40:-#FFAE00}
 COLOR_LOWR=${COLOR_LOWR:-#FF0000}
 COLOR_DOWN=${COLOR_DOWN:-#FF0000}
+ICON=$(echo -e '\uF1EB')
 
 # As per #36 -- It is transparent: e.g. if the machine has no battery or wireless
 # connection (think desktop), the corresponding block should not be displayed.
@@ -34,8 +35,8 @@ COLOR_DOWN=${COLOR_DOWN:-#FF0000}
 
 # If the wifi interface exists but no connection is active, "down" shall be displayed.
 if [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]]; then
-    echo "down"
-    echo "down"
+    echo " $ICON Down  "
+    echo " $ICON Down  "
     echo $COLOR_DOWN
     exit
 fi
@@ -49,7 +50,6 @@ QUALITY=$(iw dev ${INTERFACE} link | grep 'dBm$' | grep -Eoe '-[0-9]{2}' | awk '
 
 
 # Output text
-ICON=$(echo -e '\uF1EB')
 echo " $ICON  $QUALITY%  " # full text
 echo " $ICON  $QUALITY%  " # short text
 

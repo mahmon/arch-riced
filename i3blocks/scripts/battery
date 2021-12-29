@@ -72,7 +72,6 @@ if ($status eq 'Discharging') {
 # Show percentage and relevant icon
 
 $percent = $2;
-my $batt_icon;
 
 if ($percent < 10) {
 	$batt_icon = "<span font_family='fa-solid-900'>\N{U+F244}</span>";
@@ -90,15 +89,26 @@ $full_text .= "  $batt_icon ";
 $full_text .= "$percent%  ";
 
 
-# print text
-print "$full_text\n";
+my $opensp;
+my $closesp;
+
+$opensp = "<span color='#ff0000'>";
+$closesp = "</span>";
+
+
+
 
 # consider urgent flag only on discharge
 if ($status eq 'Discharging') {
 	if ($percent < 10) {
-		exit(33);
+		$opensp .= "$full_text";
+		$opensp .= "$closesp";
+		$full_text = $opensp;
 	}
 }
+
+# print text
+print "$full_text\n";
 
 exit(0);
 

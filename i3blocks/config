@@ -19,20 +19,21 @@ separator_block_width=0
 command=scripts/window
 markup=pango
 # background=#1793d090
-color=#eeeeee
+# color=#eeeeee
 interval=repeat
 
 [wifi]
 command=scripts/wifi
 markup=pango
 # background=#db304190
-interval=30
+# color=#eeeee
+interval=10
 
 [Brightness]
 command=scripts/backlight
 markup=pango
 # background=#1793d090
-color=#eeeeee
+# color=#eeeeee
 interval=once
 signal=10
 
@@ -40,7 +41,7 @@ signal=10
 command=scripts/volume
 markup=pango
 # background=#db304190
-color=#eeeeee
+# color=#eeeeee
 interval=once
 signal=10
 
@@ -48,25 +49,32 @@ signal=10
 command=scripts/battery
 markup=pango
 # background=#1793d090
-color=#eeeeee
+# color=#eeeeee
 interval=3
 
 [Time]
 command=scripts/time
 markup=pango
 # background=#db304190
-color=#eeeeee
+# color=#eeeeee
 interval=1
 
 [User]
 command=scripts/user
 markup=pango
 # background=#1793d090
-color=#eeeeee
+# color=#eeeeee
 interval=once
 
+[Num-Updates]
+command=scripts/updates
+markup=pango
+# background=#db304190
+# color=#eeeeee
+interval=1800
+
 [Arch Logo]
-full_text=<span font_family='font-logos'>  </span>
+full_text=<span font_family='font-logos' size='16.0pt'>  </span>
 command=scripts/shutdown_menu
 markup=pango
 # background=#db304190
