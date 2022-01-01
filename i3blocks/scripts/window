@@ -8,21 +8,19 @@
 # Availabe in the AUR
 
 
-
 ICON=$(echo -e '\uF2D0')
-
-
 
 focused_window_id=$(xdotool getwindowfocus)
 active_window_id=$(xdotool getactivewindow)
 class_name=$(xdotool getwindowclassname "$active_window_id")
 
-
 WINDOW="${class_name^}"
+FULLTEXT=" $ICON  $WINDOW  "
 
-
-
-echo " $ICON  $WINDOW  "
+if [ $class_name ]
+then
+	echo "$FULLTEXT"
+fi
 
 exit 0
 

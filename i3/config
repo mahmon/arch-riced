@@ -213,9 +213,10 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 && pkill -R
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 && pkill -RTMIN+10 i3blocks
 
 # Load wallpaper 
-exec_always --no-startup-id feh --bg-scale ~/Wallpaper/lofi-nawpic.png
+exec_always --no-startup-id feh --bg-scale ~/Wallpaper/lo-fi-02.jpg
+
 
 # Load picom
-exec --no-startup-id picom --backend glx -b
+exec --no-startup-id picom --experimental-backends
 
  

@@ -2,18 +2,23 @@
 #
 # Basic bash script:
 # Used to check for system updates in pacman
-# Can be used later to add functionality to user block.
 # 
 # Required pacman-contrib
-#
 # Requires package ttf-font-awesome
 # Available in the AUR
 
 
 ICON=$(echo -e '\uF0AD')
-NUM_UPDATES=$(checkupdates | wc -l)
 
-echo "<span font_family='FontAwesome' weight='900'> $ICON</span> $NUM_UPDATES Updates  "
+updates=$(checkupdates | wc -l)
+
+NUM="${updates}"
+FULLTEXT="<span font_family='FontAwesome' weight='900'> $ICON</span> $NUM Updates  "
+
+if [ $updates -gt 0  ]
+then
+	echo "$FULLTEXT"
+fi
 
 exit 0
 
