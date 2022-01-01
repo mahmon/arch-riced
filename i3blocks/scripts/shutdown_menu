@@ -1,4 +1,6 @@
-e rofi/zenity to change system runstate thanks to systemd.
+#!/usr/bin/env bash
+#
+# Use rofi/zenity to change system runstate thanks to systemd.
 #
 # Note: this currently relies on associative array support in the shell.
 #
@@ -27,7 +29,8 @@ e rofi/zenity to change system runstate thanks to systemd.
 #######################################################################
 
 # Options not related to colors
-ROFI_OPTIONS=(${ROFI_OPTIONS:--theme-str 'window {width: 125; height: 175; border: 2; y-offset: 25;} listview {scrollbar: false;}' -location 3})
+ROFI_TEXT="${ROFI_TEXT:-}"
+ROFI_OPTIONS=(${ROFI_OPTIONS:--theme-str 'window {border-radius: 8; width: 125; height: 200; font: "San Francisco Display 12"; padding: 5; y-offset: 35; x-offset: -10;} element {padding: 0;} element-text {padding: 5;}' -location 3})
 
 
 #######################################################################

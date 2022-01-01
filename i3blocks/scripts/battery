@@ -81,7 +81,7 @@ if ($percent < 10) {
 	$batt_icon = "<span font_family='fa-solid-900'>\N{U+F242}</span>";
 } elsif ($percent < 80) {
 	$batt_icon = "<span font_family='fa-solid-900'>\N{U+F241}</span>";
-} elsif ($percent < 100) {
+} elsif ($percent <= 100) {
 	$batt_icon = "<span font_family='fa-solid-900'>\N{U+F240}</span>";
 }
 

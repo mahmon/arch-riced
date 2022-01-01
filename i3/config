@@ -42,9 +42,6 @@ bindsym $mod+Shift+q kill
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# start rofi
-bindsym $mod+d exec --no-startup-id "rofi -modi drun, run -show drun"
-
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -168,11 +165,11 @@ bindsym $mod+r mode "resize"
 
 # Set colours for theme
 # bar
-set $bar-bg		#00000060
+set $bar-bg		#00000070
 set $separator		#ffffff
 set $bar-text		#eeeeee
 set $foc-wksp		#1793d090
-set $inact-wksp		#00000060
+set $inact-wksp		#00000070
 set $urg-wksp		#db304190
 
 # Start i3bar to display a workspace bar
@@ -191,20 +188,23 @@ bar {
 	}
 }
 
+# start rofi
+bindsym $mod+d exec --no-startup-id "rofi -show drun -show-icons"
+
 # limit floating window size
-floating_minimum_size 75 x 50
-floating_maximum_size 600 x 400
+floating_minimum_size 128 x 72
+floating_maximum_size 1280 x 720
 
 # Add gaps and rounded corners to windows
 for_window [class=".*"] border pixel 0
-gaps inner 15
+gaps inner 10
 gaps outer 15
-border_radius 5
+borderadius 8
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
 
-# Run i3lock with a keybind
-bindsym $mod+Shift+x exec --no-startup-id i3lock
+# Run shutdown menu with a keybind
+bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3blocks/scripts/shutdown_menu
 
 # Multimedia keybinds
 bindsym XF86AudioRaiseVolume exec --no-startup-id  amixer -q set Master 1dB+ && pkill -RTMIN+10 i3blocks 
