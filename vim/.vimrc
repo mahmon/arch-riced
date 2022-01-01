@@ -10,3 +10,9 @@ syntax on
 "Add cursorline to current line:
 set cursorline
 
+"Show line,column number in status bar:
+set ruler
+
+"Set tab stops to 4 spaces:
+set tabstop=4
+

@@ -5,9 +5,7 @@
 #
 # Licensed under the terms of the GNU GPL v3, or any later version.
 #
-# This script is meant to use with i3blocks. It parses the output of the "acpi"
-# command (often provided by a package of the same name) to read the status of
-# the battery.
+# This script parses "acpi" command to read battery status.
 #
 # Requires package acpi
 # Adapted by Wayne Murphy-Jerrett 
@@ -26,6 +24,7 @@ my $bat_number = $ENV{BAT_NUMBER} || 0;
 my $chr_icon;
 my $dis_icon;
 my $full_icon;
+my $pwr_icon;
 
 # read the first line of the "acpi" command output
 open (ACPI, "acpi -b 2>/dev/null| grep 'Battery $bat_number' |") or die;
@@ -41,74 +40,58 @@ elsif ($acpi !~ /: ([\w\s]+), (\d+)%/) {
 	die "$acpi\n";
 }
 
+# Set percentage and relevant battery icon
+$percent = $2;
+if ($percent < 10) {
+	$batt_icon = "\N{U+F244}";
+} elsif ($percent < 30) {
+	$batt_icon = "\N{U+F243}";
+} elsif ($percent < 60) {
+	$batt_icon = "\N{U+F242}";
+} elsif ($percent < 80) {
+	$batt_icon = "\N{U+F241}";
+} elsif ($percent <= 100) {
+	$batt_icon = "\N{U+F240}";
+}
+
 # Get status and use it to set charge state icon
-$chr_icon = "<span font_family='fa-solid-900'> \N{U+F0e7}</span>";
+$chr_icon = " \N{U+F0e7}";
 $dis_icon = "";
 $full_icon = "";
 $status = $1;
 
 if ($status eq 'Discharging') {
-	$full_text = "$dis_icon";
+	$pwr_icon = "$dis_icon";
 } elsif ($status eq 'Charging') {
-	$full_text = "$chr_icon";
+	$pwr_icon = "$chr_icon";
 } elsif ($status eq 'Full') {
-	$full_text = "$full_icon";
+	$pwr_icon = "$full_icon";
 } elsif ($status eq 'Unknown') {
 	open (AC_ADAPTER, "acpi -a |") or die;
 	$ac_adapt = <AC_ADAPTER>;
 	close(AC_ADAPTER);
-
 	if ($ac_adapt =~ /: ([\w-]+)/) {
 		$ac_adapt = $1;
-
 		if ($ac_adapt eq 'on-line') {
-			$full_text .= "$chr_icon";
+			$pwr_icon .= "$chr_icon";
 		} elsif ($ac_adapt eq 'off-line') {
-			$full_text .= "$dis_icon";
+			$pwr_icon .= "$dis_icon";
 		}
 	}
 }
 
-# Show percentage and relevant icon
-
-$percent = $2;
-
-if ($percent < 10) {
-	$batt_icon = "<span font_family='fa-solid-900'>\N{U+F244}</span>";
-} elsif ($percent < 30) {
-	$batt_icon = "<span font_family='fa-solid-900'>\N{U+F243}</span>";
-} elsif ($percent < 60) {
-	$batt_icon = "<span font_family='fa-solid-900'>\N{U+F242}</span>";
-} elsif ($percent < 80) {
-	$batt_icon = "<span font_family='fa-solid-900'>\N{U+F241}</span>";
-} elsif ($percent <= 100) {
-	$batt_icon = "<span font_family='fa-solid-900'>\N{U+F240}</span>";
-}
-
-$full_text .= "  $batt_icon ";
-$full_text .= "$percent%  ";
-
-
-my $opensp;
-my $closesp;
-
-$opensp = "<span color='#ff0000'>";
-$closesp = "</span>";
-
-
-
+# Concatenate text and output
+$full_text .= "  <span color='#cf0a0a'>$batt_icon</span>";
+$full_text .= "$pwr_icon";
+$full_text .= " $percent%  ";
+print "$full_text\n";
 
 # consider urgent flag only on discharge
 if ($status eq 'Discharging') {
 	if ($percent < 10) {
-		$opensp .= "$full_text";
-		$opensp .= "$closesp";
-		$full_text = $opensp;
+		exit(33);
 	}
 }
-
-# print text
-print "$full_text\n";
 
 exit(0);
 

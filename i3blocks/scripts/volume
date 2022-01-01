@@ -6,12 +6,10 @@
 # Requires package ttf-font-awesome
 # Availabe in the AUR
 
-
-
 ICON=$(echo -e '\uF028')
 VOLUME=$(amixer -M get Master |grep % |awk '{print $4}'|sed 's/[^0-9\%]//g')
 
-echo "<span font_family='FontAwesome' weight='900'> $ICON</span> $VOLUME  "
+echo "<span color='$icocol'> $ICON</span> $VOLUME  "
 
 exit 0
 

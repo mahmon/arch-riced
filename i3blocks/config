@@ -1,83 +1,66 @@
 # i3blocks configuration file
 #
-# The i3blocks man page describes the usage of the binary,
-# and its website describes the configuration:
-#
-#     https://vivien.github.io/i3blocks
-
+# https://vivien.github.io/i3blocks
 
 # Global properties
-
 separator=false
 separator_block_width=0
 
-
-
 # Blocks
-
 [Active-Window]
+icocol=#cf0a0a
 command=scripts/window
 markup=pango
-# background=#1793d090
-# color=#eeeeee
 interval=repeat
 
 [wifi]
+icocol=#cf0a0a
 command=scripts/wifi
 markup=pango
-# background=#db304190
-# color=#eeeee
 interval=10
 
 [Brightness]
+icocol=#cf0a0a
 command=scripts/backlight
 markup=pango
-# background=#1793d090
-# color=#eeeeee
 interval=once
 signal=10
 
 [Volume]
+icocol=#cf0a0a
 command=scripts/volume
 markup=pango
-# background=#db304190
-# color=#eeeeee
 interval=once
 signal=10
 
 [Battery]
+# set icon color in script
 command=scripts/battery
 markup=pango
-# background=#1793d090
-# color=#eeeeee
 interval=3
 
 [Time]
+icocol=#cf0a0a
 command=scripts/time
 markup=pango
-# background=#db304190
-# color=#eeeeee
 interval=1
 
 [User]
+icocol=#cf0a0a
 command=scripts/user
 markup=pango
-# background=#1793d090
-# color=#eeeeee
 interval=once
 
 [Num-Updates]
+icocol=#cf0a0a
 command=scripts/updates
 markup=pango
-# background=#db304190
-# color=#eeeeee
 interval=1800
 
 [Arch Logo]
 full_text=<span font_family='font-logos' size='16.0pt'>  </span>
 command=scripts/shutdown_menu
 markup=pango
-# background=#db304190
 color=#1793d0
 interval=0
 

@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 #
 # Use rofi/zenity to change system runstate thanks to systemd.
-#
-# Note: this currently relies on associative array support in the shell.
+# Note: this relies on associative array support in the shell.
 #
 # Inspired from i3pystatus wiki:
 # https://github.com/enkore/i3pystatus/wiki/Shutdown-Menu
@@ -20,22 +19,21 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-
 # You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-#######################################################################
-#                            BEGIN CONFIG                             #
-#######################################################################
+####################################################################
+#                         BEGIN CONFIG                             #
+####################################################################
 
-# Options not related to colors
+# Options
 ROFI_TEXT="${ROFI_TEXT:-}"
 ROFI_OPTIONS=(${ROFI_OPTIONS:--theme-str 'window {border-radius: 8; width: 125; height: 200; font: "San Francisco Display 12"; padding: 5; y-offset: 35; x-offset: -10;} element {padding: 0;} element-text {padding: 5;}' -location 3})
 
 
-#######################################################################
-#                             END CONFIG                              #
-#######################################################################
+####################################################################
+#                          END CONFIG                              #
+####################################################################
 
 # Whether to ask for user's confirmation
 enable_confirmation=${ENABLE_CONFIRMATIONS:-false}
@@ -119,8 +117,6 @@ rofi_colors=""
 
 function prepare_launcher() {
   if [[ "$1" == "rofi" ]]; then
-#    rofi_colors=(-bc "${BORDER_COLOR}" -bg "${BG_COLOR}" -fg "${FG_COLOR}" \
-#        -hlfg "${HLFG_COLOR}" -hlbg "${HLBG_COLOR}")
     launcher_exe="rofi"
     launcher_options=(-dmenu -i -lines "${menu_nrows}" -p "${ROFI_TEXT}" \
         "${rofi_colors[@]}" "${ROFI_OPTIONS[@]}")

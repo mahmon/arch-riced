@@ -2,10 +2,9 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/wayner/.gtkrc-2.0.mine"
-gtk-theme-name="WhiteSur-dark-red"
-gtk-icon-theme-name="WhiteSur-dark"
+gtk-theme-name="Orchis-dark"
+gtk-icon-theme-name="Paper"
 gtk-font-name="San Francisco Display Regular 12"
-gtk-cursor-theme-name="WhiteSur-cursors"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_TEXT
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR

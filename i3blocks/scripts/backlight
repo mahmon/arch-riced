@@ -6,12 +6,11 @@
 # Requires package ttf-font-awesome
 # Availabe in the AUR
 
-
 ICON=$(echo -e '\uF042')
 XLEVEL=$(xbacklight)
 BRIGHTNESS=$(printf "%.0f\n" "$XLEVEL")
 
-echo " $ICON $BRIGHTNESS%  "
+echo "<span color='$icocol'> $ICON</span> $BRIGHTNESS%  "
 
 exit 0
 
