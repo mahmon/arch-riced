@@ -12,7 +12,7 @@ set $mod Mod1
 
 font pango:San Francisco Display Regular 11
 
-# Use Mouse+$mod to drag floating windows to their wanted position
+# use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
@@ -69,7 +69,7 @@ bindsym $mod+space focus mode_toggle
 # focus the child container
 #bindsym $mod+d focus child
 
-# Define names for default workspaces
+# define names for default workspaces
 set $ws1 "01"
 set $ws2 "02"
 set $ws3 "03"
@@ -116,11 +116,11 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+        # these bindings trigger as soon as you enter the resize mode
+        # pressing left will shrink the window’s width.
+        # pressing right will grow the window’s width.
+        # pressing up will shrink the window’s height.
+        # pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
@@ -137,7 +137,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Set colours for theme
+# set colours for theme
 # bar
 set $bar-bg 		#00000090
 set $separator 		#ffffff
@@ -146,7 +146,7 @@ set $foc-wksp 		#cf0a0a
 set $inact-wksp 	#00000090
 set $urg-wksp 		#1793d090
 
-# Start i3bar to display a workspace bar
+# start i3bar to display a workspace bar
 bar {
 	status_command i3blocks
 	position top
@@ -162,14 +162,14 @@ bar {
 	}
 }
 
-# start rofi
+# start rofi with keybind
 bindsym $mod+d exec --no-startup-id "rofi -show drun -show-icons"
 
 # set: floating window limits
 floating_minimum_size 128 x 72
 floating_maximum_size 1280 x 720
 
-# Add gaps and rounded corners to windows
+# add gaps and rounded corners to windows
 for_window [class=".*"] border pixel 0
 gaps inner 10
 gaps outer 15
@@ -177,18 +177,21 @@ border_radius 8
 bindsym $mod+z 			gaps outer current plus 5
 bindsym $mod+Shift+z 	gaps outer current minus 5
 
-# Run shutdown menu with a keybind
-bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3blocks/scripts/shutdown_menu
+# run shutdown menu with a keybind
+bindsym $mod+x exec --no-startup-id ~/.config/i3blocks/scripts/shutdown_menu
 
-# Multimedia keybinds
+# run i3lock with keybind
+bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3lock/i3lock_script
+
+# multimedia keybinds
 bindsym XF86AudioRaiseVolume exec --no-startup-id  amixer -q set Master 1dB+ && pkill -RTMIN+10 i3blocks 
 bindsym XF86AudioLowerVolume exec --no-startup-id  amixer -q set Master 1dB- && pkill -RTMIN+10 i3blocks 
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 && pkill -RTMIN+10 i3blocks
 
-# Load wallpaper 
-exec_always --no-startup-id feh --bg-scale ~/Wallpaper/palpatine-02.jpg
+# load wallpaper with feh
+exec_always --no-startup-id feh --bg-scale ~/Wallpaper/palpatine-02.png
 
-# Load picom
+# load picom compositor
 exec --no-startup-id picom --experimental-backends
 

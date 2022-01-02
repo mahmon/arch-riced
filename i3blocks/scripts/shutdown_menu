@@ -32,31 +32,29 @@ ROFI_OPTIONS=(${ROFI_OPTIONS:--theme-str '
 	window {
 		border-radius: 8; 
 		width: 120; 
-		height: 198; 
+		height: 220; 
 		font: "San Francisco Display 12"; 
 		padding: 5; 
 		y-offset: 35; 
 		x-offset: -10;
 		} 
 	listview {
-		padding: 5px 5px 5px 10px;
 		} 
 	element {
-		padding: 0;
+		padding: 5;
 		} 
 	element-text {
-		padding: 5px 5px 5px 10px;
+		padding: 5 5 1 5;
 		} 
-	prompt {
-		padding: 0 0 0 5px;
+	inputbar {
+		padding: 5 0 0 6;
 		} 
 	textbox-prompt-colon {
 		font: "San Francisco Display Bold 12";
-		padding: 1px 1px 0 6px;
 	} 
 	entry {
 		font: "San Francisco Display Bold 12";
-		padding: 2px 0 0 0;
+		padding: 1 0 0 0;
 	}  
 ' -location 3})
 

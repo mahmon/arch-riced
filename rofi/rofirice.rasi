@@ -58,6 +58,7 @@ element.selected.normal {
 }
 inputbar {
     background-color: 	transparent;
+	padding:			0 0 0 29px;
     children: 
 		[ prompt,
 		textbox-prompt-colon,
@@ -67,7 +68,6 @@ inputbar {
 prompt {
     background-color: 	transparent;
     text-color: 		@text-normal;
-	padding:			0 0 0 20px;
 }
 textbox-prompt-colon {
     background-color: 	transparent;
@@ -75,9 +75,9 @@ textbox-prompt-colon {
     font: 				"San Francisco Display Bold 18";
     expand: 			false;
     str: 				":";
-	padding: 			0 27px 10px 13px;
 }
 entry {
+	padding:			0 0 0 26px;
     font: 				"San Francisco Display Bold 18";
     background-color: 	transparent;
 	text-color: 		@text-input;
