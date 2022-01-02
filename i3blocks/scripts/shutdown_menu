@@ -28,8 +28,37 @@
 
 # Options
 ROFI_TEXT="${ROFI_TEXT:-}"
-ROFI_OPTIONS=(${ROFI_OPTIONS:--theme-str 'window {border-radius: 8; width: 125; height: 200; font: "San Francisco Display 12"; padding: 5; y-offset: 35; x-offset: -10;} element {padding: 0;} element-text {padding: 5;}' -location 3})
-
+ROFI_OPTIONS=(${ROFI_OPTIONS:--theme-str '
+	window {
+		border-radius: 8; 
+		width: 120; 
+		height: 198; 
+		font: "San Francisco Display 12"; 
+		padding: 5; 
+		y-offset: 35; 
+		x-offset: -10;
+		} 
+	listview {
+		padding: 5px 5px 5px 10px;
+		} 
+	element {
+		padding: 0;
+		} 
+	element-text {
+		padding: 5px 5px 5px 10px;
+		} 
+	prompt {
+		padding: 0 0 0 5px;
+		} 
+	textbox-prompt-colon {
+		font: "San Francisco Display Bold 12";
+		padding: 1px 1px 0 6px;
+	} 
+	entry {
+		font: "San Francisco Display Bold 12";
+		padding: 2px 0 0 0;
+	}  
+' -location 3})
 
 ####################################################################
 #                          END CONFIG                              #
