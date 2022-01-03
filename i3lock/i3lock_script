@@ -26,6 +26,7 @@ i3lock \
 \
 --verif-color=$TEXT 				\
 --wrong-color=$TEXT 				\
+--modif-color=$TEXT 				\
 --time-color=$TEXT 					\
 --date-color=$TEXT 					\
 --layout-color=$TEXT 				\
@@ -36,11 +37,14 @@ i3lock \
 --clock 							\
 --indicator 						\
 --ring-width=12.0 					\
---time-str="%A %H:%M"		 		\
---time-size=24 						\
---date-str=""	 					\
+--time-font="FontAwesome"	 		\
+--time-size=64 						\
+--time-str=""	 					\
+--date-size=18 						\
+--date-str="%A %H:%M"		 		\
 \
---verif-text="verifying" 			\
+--verif-font="FontAwesome"	 		\
+--verif-size=64 					\
+--verif-text=""	 				\
 --wrong-text="wrong" 				\
 \
-
