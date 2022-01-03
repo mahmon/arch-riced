@@ -1,0 +1,50 @@
+#!/bin/sh
+
+BACK='#00000060'
+BACKVER='#cf0a0a60'
+BACKWRONG='#1793d060'
+TRANS='#00000000'
+DEFAULT='#cf0a0a'
+TEXT='#eeeeee'
+WRONG='#1793d0'
+VERIFYING='#cf0a0a'
+
+i3lock \
+-i ~/Wallpaper/darth-vader.png -F 	\
+--color=$BACK 						\
+\
+--insidever-color=$BACKVER 			\
+--ringver-color=$DEFAULT 			\
+\
+--insidewrong-color=$BACKWRONG 		\
+--ringwrong-color=$WRONG 			\
+\
+--inside-color=$BACK 				\
+--ring-color=$DEFAULT 				\
+--line-color=$TRANS 				\
+--separator-color=$TRANS 			\
+\
+--verif-color=$TEXT 				\
+--wrong-color=$TEXT 				\
+--modif-color=$TEXT 				\
+--time-color=$TEXT 					\
+--date-color=$TEXT 					\
+--layout-color=$TEXT 				\
+--keyhl-color=$WRONG 				\
+--bshl-color=$WRONG 				\
+\
+--screen 1 							\
+--clock 							\
+--indicator 						\
+--ring-width=12.0 					\
+--time-font="FontAwesome"	 		\
+--time-size=64 						\
+--time-str=""	 					\
+--date-size=18 						\
+--date-str="%A %H:%M"		 		\
+\
+--verif-font="FontAwesome"	 		\
+--verif-size=64 					\
+--verif-text=""	 				\
+--wrong-text="wrong" 				\
+\
