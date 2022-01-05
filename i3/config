@@ -70,16 +70,15 @@ bindsym $mod+space focus mode_toggle
 #bindsym $mod+d focus child
 
 # define names for default workspaces
-set $ws1 "01"
-set $ws2 "02"
-set $ws3 "03"
-set $ws4 "04"
-set $ws5 "05"
-set $ws6 "06"
-set $ws7 "07"
-set $ws8 "08"
-set $ws9 "09"
-set $ws10 "10"
+set $ws1 "1:  Home"
+set $ws2 "2:  System"
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
+set $ws7 "7: "
+set $ws8 "8: "
+set $ws9 "9: "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -91,7 +90,6 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -103,7 +101,6 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -172,7 +169,7 @@ floating_maximum_size 1280 x 720
 # add gaps and rounded corners to windows
 for_window [class=".*"] border pixel 0
 gaps inner 10
-gaps outer 15
+gaps outer 40
 border_radius 8
 bindsym $mod+z 			gaps outer current plus 5
 bindsym $mod+Shift+z 	gaps outer current minus 5
@@ -194,4 +191,19 @@ exec_always --no-startup-id feh --bg-scale ~/Wallpaper/palpatine-02.png
 
 # load picom compositor
 exec --no-startup-id picom --experimental-backends
+
+# load system workspace
+exec --no-startup-id "i3-msg 'workspace 2:  System; append_layout ~/.config/i3/wksp-sys.json'"
+
+# load unimatrix; swallowed by system workspace
+exec --no-startup-id alacritty -t unimatrix -e unimatrix -a -c red -s 93 -l naAScC
+
+# load neofetch; swallowed by system workspace
+exec --no-startup-id alacritty -t neofetch --option font.size=8.0 --hold -e neofetch
+
+# load BpyTOP; swallowed by system workspace
+exec --no-startup-id alacritty -t bpytop  -e bpytop
+
+# load empty home  workspace
+exec --no-startup-id "i3-msg 'workspace 1:  Home'"
 

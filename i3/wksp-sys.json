@@ -1,0 +1,53 @@
+{
+    // split-v container with 1 child
+    "layout": "splitv",
+    "percent": 1.0,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "name": "Alacritty",
+            "percent": 0.4,
+            "swallows": [
+                {
+                    "class": "Alacritty",
+                    "instance": "Alacritty",
+                    "title": "unimatrix"
+                }
+            ]
+        },
+        {
+             // split-h container with 2 children
+            "layout": "splith",
+            "percent": 0.6,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "none",
+                    "name": "Alacritty",
+                    "percent": 0.5,
+                    "swallows": [
+                        {
+                            "class": "Alacritty",
+                            "instance": "Alacritty",
+                            "title": "bpytop"
+                        }
+                    ]
+                },
+                {
+                    "border": "none",
+                    "name": "Alacritty",
+                    "percent": 0.5,
+                    "swallows": [
+                        {
+                            "class": "Alacritty",
+                            "instance": "Alacritty",
+                            "title": "neofetch"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
