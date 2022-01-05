@@ -202,7 +202,7 @@ exec --no-startup-id alacritty -t unimatrix -e unimatrix -a -c red -s 93 -l naAS
 exec --no-startup-id alacritty -t neofetch --option font.size=8.0 --hold -e neofetch
 
 # load BpyTOP; swallowed by system workspace
-exec --no-startup-id alacritty -t bpytop  -e bpytop
+exec --no-startup-id alacritty -t bpytop -e bpytop
 
 # load empty home  workspace
 exec --no-startup-id "i3-msg 'workspace 1:  Home'"
