@@ -10,7 +10,7 @@
 ICON=$(echo -e '\uF017')
 DAY_TIME=$(date +"%a %H:%M")
 
-echo "<span weight='900' color='$icocol'> $ICON</span> $DAY_TIME  "
+echo "<span color='$icocol'> $ICON</span> $DAY_TIME  "
 
 exit 0
 

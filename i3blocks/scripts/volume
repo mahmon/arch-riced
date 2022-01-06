@@ -9,7 +9,7 @@
 ICON=$(echo -e '\uF028')
 VOLUME=$(amixer -M get Master |grep % |awk '{print $4}'|sed 's/[^0-9\%]//g')
 
-echo "<span weight='900' color='$icocol'> $ICON</span> $VOLUME  "
+echo "<span color='$icocol'> $ICON</span> $VOLUME  "
 
 exit 0
 

@@ -25,7 +25,7 @@
                 {
                     "border": "none",
                     "name": "Alacritty",
-                    "percent": 0.5,
+                    "percent": 0.55,
                     "swallows": [
                         {
                             "class": "Alacritty",
@@ -37,7 +37,7 @@
                 {
                     "border": "none",
                     "name": "Alacritty",
-                    "percent": 0.5,
+                    "percent": 0.45,
                     "swallows": [
                         {
                             "class": "Alacritty",

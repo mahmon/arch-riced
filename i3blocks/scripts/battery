@@ -81,14 +81,21 @@ if ($status eq 'Discharging') {
 }
 
 # Concatenate text and output
-$full_text .= "  <span weight='900' color='#cf0a0a'>$batt_icon</span>";
+$full_text .= "  <span color='#cf0a0a'>$batt_icon</span>";
 $full_text .= "$pwr_icon";
 $full_text .= " $percent%  ";
 print "$full_text\n";
 
-# consider urgent flag only on discharge
+# add urgent flag if discharging and under ten percent
 if ($status eq 'Discharging') {
 	if ($percent < 10) {
+		exit(33);
+	}
+}
+
+# add urgent flag if charging and at 100 percent
+if ($status eq 'Charging') {
+	if ($percent > 99) {
 		exit(33);
 	}
 }

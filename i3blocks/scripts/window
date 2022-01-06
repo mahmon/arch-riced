@@ -14,7 +14,7 @@ active_window_id=$(xdotool getactivewindow)
 class_name=$(xdotool getwindowclassname "$active_window_id")
 
 WINDOW="${class_name^}"
-FULLTEXT=" <span weight='900' color='$icocol'>$ICON</span>  $WINDOW  "
+FULLTEXT=" <span color='$icocol'>$ICON</span>  $WINDOW  "
 
 if [ $class_name ]
 then
