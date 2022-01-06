@@ -1,0 +1,20 @@
+{
+    // split-v container with 1 child
+    "layout": "splitv",
+    "percent": 1.0,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "name": "Firefox",
+            "percent": 1.0,
+            "swallows": [
+                {
+                    "class": "firefox",
+                    "instance": "Navigator"
+                }
+            ]
+        }
+    ]
+}
+

@@ -70,9 +70,9 @@ bindsym $mod+space focus mode_toggle
 #bindsym $mod+d focus child
 
 # define names for default workspaces
-set $ws1 "1:  Home"
+set $ws1 "1:  Home"
 set $ws2 "2:  System"
-set $ws3 "3: "
+set $ws3 "3:  Web"
 set $ws4 "4:  Productivity"
 set $ws5 "5: "
 set $ws6 "6: "
@@ -194,6 +194,9 @@ exec --no-startup-id picom --experimental-backends
 
 # load system workspace
 exec --no-startup-id i3-msg 'workspace $ws2; append_layout ~/.config/i3/wksp-sys.json'
+# load system workspace
+
+exec --no-startup-id i3-msg 'workspace $ws3; append_layout ~/.config/i3/wksp-web.json'
 
 # load unimatrix; swallowed by system workspace
 exec --no-startup-id alacritty -t unimatrix -e unimatrix -a -c red -s 93 -l naAScC
@@ -204,11 +207,14 @@ exec --no-startup-id alacritty -t neofetch --option font.size=8.0 --hold -e neof
 # load BpyTOP; swallowed by system workspace
 exec --no-startup-id alacritty -t bpytop -e bpytop
 
+# load firfox; swallowed by web workspace
+exec --no-startup-id firefox
+
 # load empty home  workspace
 exec --no-startup-id i3-msg 'workspace $ws1'
 
-
-
+# Assign specific apps to specific workspaces
+assign [class="firefox"] $ws3
 assign [class="libreoffice"] $ws4
 
 
