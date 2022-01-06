@@ -10,7 +10,7 @@
 
 set $mod Mod1
 
-font pango:San Francisco Display Regular 11
+font pango:San Francisco Display Regular 10
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -187,7 +187,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 && pkill -R
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 && pkill -RTMIN+10 i3blocks
 
 # load wallpaper with feh
-exec_always --no-startup-id feh --bg-scale ~/Wallpaper/palpatine-02.png
+exec_always --no-startup-id feh --bg-scale ~/Wallpaper/emperor.png
 
 # load picom compositor
 exec --no-startup-id picom --experimental-backends
@@ -207,7 +207,7 @@ exec --no-startup-id alacritty -t neofetch --option font.size=8.0 --hold -e neof
 # load BpyTOP; swallowed by system workspace
 exec --no-startup-id alacritty -t bpytop -e bpytop
 
-# load firfox; swallowed by web workspace
+# load firefox; swallowed by web workspace (add url after command to load on launch)
 exec --no-startup-id firefox
 
 # load empty home  workspace
