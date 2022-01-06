@@ -72,13 +72,13 @@ bindsym $mod+space focus mode_toggle
 # define names for default workspaces
 set $ws1 "1:  Home"
 set $ws2 "2:  System"
-set $ws3 "3:  Web"
-set $ws4 "4:  Productivity"
-set $ws5 "5: "
-set $ws6 "6: "
-set $ws7 "7: "
-set $ws8 "8: "
-set $ws9 "9: "
+set $ws3 "3:  Web"
+set $ws4 "4:  Music"
+set $ws5 "5:  Video"
+set $ws6 "6:  Gaming"
+set $ws7 "7:  Design"
+set $ws8 "8:  Productivity"
+set $ws9 "9:  Freespace"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -215,8 +215,7 @@ exec --no-startup-id i3-msg 'workspace $ws1'
 
 # Assign specific apps to specific workspaces
 assign [class="firefox"] $ws3
-assign [class="libreoffice"] $ws4
-
-
+assign [class="Gimp-2.10"] $ws7
+assign [class="libreoffice"] $ws8
 
 
