@@ -37,14 +37,9 @@ i3lock \
 --clock 							\
 --indicator 						\
 --ring-width=12.0 					\
---time-font="FontAwesome"	 		\
---time-size=64 						\
---time-str=""	 					\
---date-size=18 						\
---date-str="%A %H:%M"		 		\
+--date-str="%a, %b %d %Y"			\
 \
---verif-font="FontAwesome"	 		\
---verif-size=64 					\
---verif-text=""	 				\
+--verif-text="verifying"	 		\
 --wrong-text="wrong" 				\
 \
+
