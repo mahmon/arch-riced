@@ -10,7 +10,11 @@ ICON=$(echo -e '\uF042')
 XLEVEL=$(xbacklight)
 BRIGHTNESS=$(printf "%.0f\n" "$XLEVEL")
 
-echo "<span color='$icocol'> $ICON</span> $BRIGHTNESS%  "
+FULLTEXT=" <span color='$icocol'>$ICON</span> $BRIGHTNESS%  "
+SHORTEXT=""
+
+echo "$FULLTEXT"
+echo "$SHORTEXT"
 
 exit 0
 

@@ -15,10 +15,12 @@ class_name=$(xdotool getwindowclassname "$active_window_id")
 
 WINDOW="${class_name^}"
 FULLTEXT=" <span color='$icocol'>$ICON</span>  $WINDOW  "
+SHORTEXT=""
 
 if [ $class_name ]
 then
 	echo "$FULLTEXT"
+	echo "$SHORTEXT"
 fi
 
 exit 0

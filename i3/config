@@ -215,6 +215,7 @@ exec --no-startup-id i3-msg 'workspace $ws1'
 
 # Assign specific apps to specific workspaces
 assign [class="firefox"] $ws3
+assign [class="Steam"] $ws6
 assign [class="Gimp-2.10"] $ws7
 assign [class="libreoffice"] $ws8
 

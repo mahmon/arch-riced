@@ -11,13 +11,26 @@
 ICON=$(echo -e '\uF013')
 updates=$(checkupdates | wc -l)
 NUM="${updates}"
+UP="Update"
+UPS="Updates"
 
-FULLTEXT="<span color='$icocol'> $ICON</span> $NUM Updates  "
+FULLTEXT="<span color='$icocol'> $ICON</span> $NUM "
+SHORTEXT="<span color='$icocol'> $ICON</span> $NUM"
 
-if [ $updates -gt 0  ]
+if [ $NUM -eq 1 ]
 then
-	echo "$FULLTEXT"
+	FULLTEXT+="$UP  "
+else
+	FULLTEXT+="$UPS  "
 fi
+
+if [ $NUM -lt 1  ]
+then
+	exit 0
+fi
+
+echo "$FULLTEXT"
+echo "$SHORTEXT"
 
 exit 0
 

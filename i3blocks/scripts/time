@@ -9,8 +9,13 @@
 
 ICON=$(echo -e '\uF017')
 DAY_TIME=$(date +"%a %H:%M")
+TIME=$(date +"%H:%M")
 
-echo "<span color='$icocol'> $ICON</span> $DAY_TIME  "
+FULLTEXT=" <span color='$icocol'>$ICON</span> $DAY_TIME  "
+SHORTEXT=" <span color='$icocol'>$ICON</span> $TIME  "
+
+echo "$FULLTEXT"
+echo "$SHORTEXT"
 
 exit 0
 
