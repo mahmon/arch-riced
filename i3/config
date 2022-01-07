@@ -61,7 +61,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggl
 
 # focus the parent container
 #bindsym $mod+a focus parent
@@ -76,9 +76,10 @@ set $ws3 "3:  Web"
 set $ws4 "4:  Music"
 set $ws5 "5:  Video"
 set $ws6 "6:  Gaming"
-set $ws7 "7:  Design"
-set $ws8 "8:  Productivity"
-set $ws9 "9:  Freespace"
+set $ws7 "7:  Productivity"
+set $ws8 "8:  Design"
+set $ws9 "9:  Code"
+set $ws10 "10:  Empty Space"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -90,6 +91,7 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -101,6 +103,7 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -188,25 +191,27 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 && pkill -RTM
 
 # load wallpaper with feh
 exec_always --no-startup-id feh --bg-scale ~/Wallpaper/emperor.png
-
 # load picom compositor
 exec --no-startup-id picom --experimental-backends
 
+# load home workspace
+exec --no-startup-id i3-msg 'workspace $ws1; append_layout ~/.config/i3/wksp-home.json'
 # load system workspace
 exec --no-startup-id i3-msg 'workspace $ws2; append_layout ~/.config/i3/wksp-sys.json'
-# load system workspace
-
+# load web workspace
 exec --no-startup-id i3-msg 'workspace $ws3; append_layout ~/.config/i3/wksp-web.json'
+
+# load mc file manager; swallowed by home workspace
+exec --no-startup-id alacritty -t mc -e mc
+# load feh image; swallowed by home workspace
+exec --no-startup-id feh ~/Wallpaper/sadako.png --zoom 75
 
 # load unimatrix; swallowed by system workspace
 exec --no-startup-id alacritty -t unimatrix -e unimatrix -a -c red -s 93 -l naAScC
-
 # load neofetch; swallowed by system workspace
 exec --no-startup-id alacritty -t neofetch --option font.size=8.0 --hold -e neofetch
-
 # load BpyTOP; swallowed by system workspace
 exec --no-startup-id alacritty -t bpytop -e bpytop
-
 # load firefox; swallowed by web workspace (add url after command to load on launch)
 exec --no-startup-id firefox
 
@@ -216,7 +221,6 @@ exec --no-startup-id i3-msg 'workspace $ws1'
 # Assign specific apps to specific workspaces
 assign [class="firefox"] $ws3
 assign [class="Steam"] $ws6
-assign [class="Gimp-2.10"] $ws7
-assign [class="libreoffice"] $ws8
-
+assign [class="libreoffice"] $ws7
+assign [class="Gimp-2.10"] $ws8
 

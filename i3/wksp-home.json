@@ -1,0 +1,32 @@
+{
+    // split-h container with 2 children
+    "layout": "splith",
+    "percent": 1.0,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "name": "Alacritty",
+            "percent": 0.7,
+            "swallows": [
+                {
+                    "class": "Alacritty",
+                    "instance": "Alacritty",
+					"title": "mc"
+                }
+            ]
+        },
+        {
+            "border": "none",
+            "name": "feh",
+            "percent": 0.3,
+            "swallows": [
+                {
+                    "class": "feh",
+                    "instance": "feh"
+                }
+            ]
+        }
+    ]
+}
+
