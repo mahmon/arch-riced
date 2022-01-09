@@ -93,8 +93,8 @@ if ($status eq 'Discharging') {
 	}
 }
 
-# add urgent flag if charging and at 100 percent
-if ($status eq 'Charging') {
+# add urgent flag if not discharging and at 100 percent
+if ($status ne 'Discharging') {
 	if ($percent > 99) {
 		exit(33);
 	}
