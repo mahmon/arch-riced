@@ -194,26 +194,36 @@ exec_always --no-startup-id feh --bg-scale ~/Wallpaper/emperor.png
 # load picom compositor
 exec --no-startup-id picom --experimental-backends
 
-# load home workspace
+# load home - workspace 1
 exec --no-startup-id i3-msg 'workspace $ws1; append_layout ~/.config/i3/wksp-home.json'
-# load system workspace
+# load system - workspace 2
 exec --no-startup-id i3-msg 'workspace $ws2; append_layout ~/.config/i3/wksp-sys.json'
-# load web workspace
+# load web - workspace 3
 exec --no-startup-id i3-msg 'workspace $ws3; append_layout ~/.config/i3/wksp-web.json'
+# load music - workspace 4
+exec --no-startup-id i3-msg 'workspace $ws4; append_layout ~/.config/i3/wksp-music.json'
 
-# load mc file manager; swallowed by home workspace
+# load mc file manager; swalilowed by home - workspace 1
 exec --no-startup-id alacritty -t mc -e mc
-# load feh image; swallowed by home workspace
+# load feh image; swallowed by home - workspace 1
 exec --no-startup-id feh ~/Wallpaper/sadako.png --zoom 75
 
-# load unimatrix; swallowed by system workspace
+# load unimatrix; swallowed by system - workspace 2
 exec --no-startup-id alacritty -t unimatrix -e unimatrix -a -c red -s 93 -l naAScC
-# load neofetch; swallowed by system workspace
+# load neofetch; swallowed by system - workspace 2
 exec --no-startup-id alacritty -t neofetch --option font.size=8.0 --hold -e neofetch
-# load BpyTOP; swallowed by system workspace
+# load BpyTOP; swallowed by system - workspace 2
 exec --no-startup-id alacritty -t bpytop -e bpytop
-# load firefox; swallowed by web workspace (add url after command to load on launch)
+
+# load firefox; swallowed by web - workspace 3
 exec --no-startup-id firefox
+
+# load mpc player with add songs and play in random mode
+exec --no-startup-id mpc add / && mpc random on && mpc play
+# load cava; swallowed by music - workspace 4
+exec --no-startup-id alacritty -t cava -e cava
+# load ncmpcpp; swallowed by music - workspace 4
+exec --no-startup-id alacritty -t ncmpcpp -e ncmpcpp
 
 # load empty home  workspace
 exec --no-startup-id i3-msg 'workspace $ws1'

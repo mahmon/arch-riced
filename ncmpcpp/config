@@ -415,7 +415,7 @@ song_columns_list_format = (20)[red]{a} (6f)[red]{NE} (50)[white]{t|f:Title} (20
 #
 #generate_win32_compatible_filenames = yes
 #
-#allow_for_physical_item_deletion = no
+allow_for_physical_item_deletion = yes
 #
 ##
 ## Note: If you set this variable, ncmpcpp will try to get info from last.fm in
@@ -467,7 +467,7 @@ song_columns_list_format = (20)[red]{a} (6f)[red]{NE} (50)[white]{t|f:Title} (20
 #
 #ask_before_clearing_playlists = yes
 #
-#clock_display_seconds = no
+clock_display_seconds = yes
 #
 #display_volume_level = yes
 #
