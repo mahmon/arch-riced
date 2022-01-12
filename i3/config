@@ -209,18 +209,18 @@ exec --no-startup-id alacritty -t mc -e mc
 exec --no-startup-id feh ~/Wallpaper/sadako.png --zoom 75
 
 # load unimatrix; swallowed by system - workspace 2
-exec --no-startup-id alacritty -t unimatrix --hold -e unimatrix -a -c red -s 93 -l naAScC
+exec --no-startup-id alacritty -t unimatrix -e unimatrix -a -c red -s 93 -l naAScC
 # load neofetch; swallowed by system - workspace 2
 exec --no-startup-id alacritty -t neofetch --option font.size=8.0 --hold -e neofetch
 # load BpyTOP; swallowed by system - workspace 2
-exec --no-startup-id alacritty -t bpytop --hold -e bpytop
+exec --no-startup-id alacritty -t bpytop -e bpytop
 
 # load mpc player with add songs and play in random mode
 exec --no-startup-id mpc add / && mpc random on && mpc play
 # load ncmpcpp; swallowed by music - workspace 3
-exec --no-startup-id alacritty -t ncmpcpp --hold -e ncmpcpp
+exec --no-startup-id alacritty -t ncmpcpp -e ncmpcpp
 # load cava; swallowed by music - workspace 3
-exec --no-startup-id alacritty -t cava --hold -e cava
+exec --no-startup-id alacritty -t cava -e cava
 
 # load firefox; swallowed by web - workspace 4
 exec --no-startup-id firefox
