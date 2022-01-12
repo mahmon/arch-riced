@@ -7,24 +7,24 @@
         {
             "border": "none",
             "name": "Alacritty",
-            "percent": 0.6,
+            "percent": 0.5,
             "swallows": [
                 {
                     "class": "Alacritty",
                     "instance": "Alacritty",
-                    "title": "cava"
+                    "title": "ncmpcpp"
                 }
             ]
         },
         {
             "border": "none",
             "name": "Alacritty",
-            "percent": 0.4,
+            "percent": 0.5,
             "swallows": [
                 {
                     "class": "Alacritty",
                     "instance": "Alacritty",
-                    "title": "ncmpcpp"
+                    "title": "cava"
                 }
             ]
         }

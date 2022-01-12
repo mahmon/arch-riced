@@ -72,8 +72,8 @@ bindsym $mod+space focus mode_toggle
 # define names for default workspaces
 set $ws1 "1:  Home"
 set $ws2 "2:  System"
-set $ws3 "3:  Web"
-set $ws4 "4:  Music"
+set $ws3 "3:  Music"
+set $ws4 "4:  Web"
 set $ws5 "5:  Video"
 set $ws6 "6:  Gaming"
 set $ws7 "7:  Productivity"
@@ -190,7 +190,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 && pkill -R
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 && pkill -RTMIN+10 i3blocks
 
 # load wallpaper with feh
-exec_always --no-startup-id feh --bg-scale ~/Wallpaper/emperor.png
+exec_always --no-startup-id feh --bg-scale ~/Wallpaper/vader.png
 # load picom compositor
 exec --no-startup-id picom --experimental-backends
 
@@ -198,38 +198,39 @@ exec --no-startup-id picom --experimental-backends
 exec --no-startup-id i3-msg 'workspace $ws1; append_layout ~/.config/i3/wksp-home.json'
 # load system - workspace 2
 exec --no-startup-id i3-msg 'workspace $ws2; append_layout ~/.config/i3/wksp-sys.json'
-# load web - workspace 3
-exec --no-startup-id i3-msg 'workspace $ws3; append_layout ~/.config/i3/wksp-web.json'
-# load music - workspace 4
-exec --no-startup-id i3-msg 'workspace $ws4; append_layout ~/.config/i3/wksp-music.json'
+# load music - workspace 3
+exec --no-startup-id i3-msg 'workspace $ws3; append_layout ~/.config/i3/wksp-music.json'
+# load web - workspace 4
+exec --no-startup-id i3-msg 'workspace $ws4; append_layout ~/.config/i3/wksp-web.json'
 
-# load mc file manager; swalilowed by home - workspace 1
+# load mc file manager; swallowed by home - workspace 1
 exec --no-startup-id alacritty -t mc -e mc
 # load feh image; swallowed by home - workspace 1
 exec --no-startup-id feh ~/Wallpaper/sadako.png --zoom 75
 
 # load unimatrix; swallowed by system - workspace 2
-exec --no-startup-id alacritty -t unimatrix -e unimatrix -a -c red -s 93 -l naAScC
+exec --no-startup-id alacritty -t unimatrix --hold -e unimatrix -a -c red -s 93 -l naAScC
 # load neofetch; swallowed by system - workspace 2
 exec --no-startup-id alacritty -t neofetch --option font.size=8.0 --hold -e neofetch
 # load BpyTOP; swallowed by system - workspace 2
-exec --no-startup-id alacritty -t bpytop -e bpytop
-
-# load firefox; swallowed by web - workspace 3
-exec --no-startup-id firefox
+exec --no-startup-id alacritty -t bpytop --hold -e bpytop
 
 # load mpc player with add songs and play in random mode
 exec --no-startup-id mpc add / && mpc random on && mpc play
-# load cava; swallowed by music - workspace 4
-exec --no-startup-id alacritty -t cava -e cava
-# load ncmpcpp; swallowed by music - workspace 4
-exec --no-startup-id alacritty -t ncmpcpp -e ncmpcpp
+# load ncmpcpp; swallowed by music - workspace 3
+exec --no-startup-id alacritty -t ncmpcpp --hold -e ncmpcpp
+# load cava; swallowed by music - workspace 3
+exec --no-startup-id alacritty -t cava --hold -e cava
+
+# load firefox; swallowed by web - workspace 4
+exec --no-startup-id firefox
 
 # load empty home  workspace
 exec --no-startup-id i3-msg 'workspace $ws1'
 
 # Assign specific apps to specific workspaces
-assign [class="firefox"] $ws3
+assign [class="firefox"] $ws4
+assign [class="mpv"] $ws5
 assign [class="Steam"] $ws6
 assign [class="libreoffice"] $ws7
 assign [class="Gimp-2.10"] $ws8
