@@ -10,7 +10,7 @@ WRONG='#1793d0'
 VERIFYING='#cf0a0a'
 
 i3lock \
--i ~/Wallpaper/vader.png -F		 	\
+-i ~/Wallpapers/Tiamat.png -F		\
 --color=$BACK 						\
 \
 --insidever-color=$BACKVER 			\
