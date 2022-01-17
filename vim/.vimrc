@@ -7,9 +7,6 @@ set paste
 "Turn on syntax highlighting:
 syntax on
 
-"Add cursorline to current line:
-set cursorline
-
 "Show line,column number in status bar:
 set ruler
 
