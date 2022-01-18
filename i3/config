@@ -170,7 +170,7 @@ for_window [class=".*"] move absolute position center
 # add gaps and rounded corners to windows
 for_window [class=".*"] border pixel 0
 gaps inner 10
-gaps outer 20
+gaps outer 90
 border_radius 5
 bindsym $mod+z 			gaps outer current plus 5
 bindsym $mod+Shift+z 	gaps outer current minus 5
@@ -186,7 +186,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set PCM 1dB+ && pkil
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set PCM 1dB- && pkill -RTMIN+10 i3blocks 
 
 # load wallpaper with feh
-exec_always --no-startup-id feh --bg-scale ~/Wallpapers/IcewindDale.jpg
+exec_always --no-startup-id feh --bg-scale ~/Wallpapers/IcewindDale.png
 # load picom compositor
 exec --no-startup-id picom --experimental-backends
 
@@ -202,12 +202,12 @@ exec --no-startup-id i3-msg 'workspace $ws4; append_layout ~/.config/i3/wksp-web
 # load mc file manager; swallowed by home - workspace 1
 exec --no-startup-id alacritty -t mc -e mc
 # load feh image; swallowed by home - workspace 1
-exec --no-startup-id feh ~/Wallpaper/sadako.png --zoom 75
+exec --no-startup-id feh ~/Wallpapers/DnDLogo.png --zoom 30
 
 # load unimatrix; swallowed by system - workspace 2
 exec --no-startup-id alacritty -t unimatrix -e unimatrix -a -c red -s 93 -l naAScC
 # load neofetch; swallowed by system - workspace 2
-exec --no-startup-id alacritty -t neofetch --option font.size=8.0 --hold -e neofetch
+exec --no-startup-id alacritty -t neofetch --option font.size=7.0 --hold -e neofetch
 # load BpyTOP; swallowed by system - workspace 2
 exec --no-startup-id alacritty -t bpytop -e bpytop
 
@@ -221,13 +221,14 @@ exec --no-startup-id alacritty -t cava -e cava
 # load firefox; swallowed by web - workspace 4
 exec --no-startup-id firefox
 
-# load empty home  workspace
-exec --no-startup-id i3-msg 'workspace $ws1'
-
 # Assign specific apps to specific workspaces
 assign [class="firefox"] $ws4
 assign [class="mpv"] $ws5
 assign [class="Steam"] $ws6
 assign [class="libreoffice"] $ws7
 assign [class="Gimp-2.10"] $ws8
+
+# For apps that don't respond to 'assign' use move
+for_window [class="libreoffice-writer"] move container to workspace $ws7
+for_window [class="libreoffice-calc"] move container to workspace $ws7
 
