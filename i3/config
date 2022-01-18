@@ -162,15 +162,16 @@ bar {
 # start rofi with keybind
 bindsym $mod+d exec --no-startup-id "rofi -show drun -show-icons"
 
-# set: floating window limits
+# set: floating window limits and force to center
 floating_minimum_size 128 x 72
-floating_maximum_size 1280 x 720
+floating_maximum_size 1200 x 680
+for_window [class=".*"] move absolute position center
 
 # add gaps and rounded corners to windows
 for_window [class=".*"] border pixel 0
 gaps inner 10
-gaps outer 40
-border_radius 8
+gaps outer 20
+border_radius 5
 bindsym $mod+z 			gaps outer current plus 5
 bindsym $mod+Shift+z 	gaps outer current minus 5
 
@@ -181,8 +182,8 @@ bindsym $mod+x exec --no-startup-id ~/.config/i3blocks/scripts/shutdown_menu
 bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3lock/i3lock_script
 
 # multimedia keybinds
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 1dB+ && pkill -RTMIN+10 i3blocks 
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 1dB- && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set PCM 1dB+ && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set PCM 1dB- && pkill -RTMIN+10 i3blocks 
 
 # load wallpaper with feh
 exec_always --no-startup-id feh --bg-scale ~/Wallpapers/IcewindDale.jpg
