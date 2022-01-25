@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Basic bash script:
+# To launch i3 workspace and 
+# populate with relevant content
+
+WKSP=$1
+
+i3-msg "workspace $WKSP; append_layout ~/.config/i3/wksp-music.json"
+
+i3-msg "exec --no-startup-id mpc add / && mpc random on && mpc play" 
+i3-msg "exec --no-startup-id alacritty -t ncmpcpp -e ncmpcpp" 
+i3-msg "exec --no-startup-id alacritty -t cava -e cava" 
+

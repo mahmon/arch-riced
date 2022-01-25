@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Basic bash script:
+# To launch i3 workspace and 
+# populate with relevant content
+
+WKSP=$1
+
+i3-msg "workspace $WKSP; append_layout ~/.config/i3/wksp-sys.json"
+
+i3-msg "exec --no-startup-id alacritty -t unimatrix -e unimatrix -a -c red -s 93 -l naAScC"
+i3-msg "exec --no-startup-id alacritty -t neofetch --hold -e neofetch"
+i3-msg "exec --no-startup-id alacritty -t bpytop -e bpytop"
+

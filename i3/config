@@ -3,8 +3,9 @@
 # i3 config file (v4)
 # See https://i3wm.org/docs/userguide.html for a complete reference!
 
-# Set the mod key 1 for alt 4 for Win
+# Set the mod key; Mod1 for alt, Mod4 for Win
 set $mod Mod1
+set $win Mod4
 
 # i3 system font
 font pango:System San Francisco Display Regular 10
@@ -102,6 +103,12 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# launch workspace with default contents loaded
+bindsym $mod+$win+1 exec --no-startup-id ~/.config/i3/loadlayout-home $ws1
+bindsym $mod+$win+2 exec --no-startup-id ~/.config/i3/loadlayout-sys $ws2
+bindsym $mod+$win+3 exec --no-startup-id ~/.config/i3/loadlayout-music $ws3
+bindsym $mod+$win+4 exec --no-startup-id ~/.config/i3/loadlayout-web $ws4
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -170,7 +177,7 @@ for_window [class=".*"] move absolute position center
 # add gaps and rounded corners to windows
 for_window [class=".*"] border pixel 0
 gaps inner 10
-gaps outer 90
+gaps outer 30
 border_radius 5
 bindsym $mod+z 			gaps outer current plus 5
 bindsym $mod+Shift+z 	gaps outer current minus 5
@@ -190,40 +197,46 @@ exec_always --no-startup-id feh --bg-scale ~/Wallpapers/IcewindDale.png
 # load picom compositor
 exec --no-startup-id picom --experimental-backends
 
-# load home - workspace 1
-exec --no-startup-id i3-msg 'workspace $ws1; append_layout ~/.config/i3/wksp-home.json'
+# NOTE: Workspace layouts are now be loaded and populated with keybind WIN+ALT+ <NUM>
+# load home - workspace 1 
+# exec --no-startup-id i3-msg 'workspace $ws1; append_layout ~/.config/i3/wksp-home.json'
 # load system - workspace 2
-exec --no-startup-id i3-msg 'workspace $ws2; append_layout ~/.config/i3/wksp-sys.json'
+# exec --no-startup-id i3-msg 'workspace $ws2; append_layout ~/.config/i3/wksp-sys.json'
 # load music - workspace 3
-exec --no-startup-id i3-msg 'workspace $ws3; append_layout ~/.config/i3/wksp-music.json'
+# exec --no-startup-id i3-msg 'workspace $ws3; append_layout ~/.config/i3/wksp-music.json'
 # load web - workspace 4
-exec --no-startup-id i3-msg 'workspace $ws4; append_layout ~/.config/i3/wksp-web.json'
+# exec --no-startup-id i3-msg 'workspace $ws4; append_layout ~/.config/i3/wksp-web.json'
 
-# load mc file manager; swallowed by home - workspace 1
-exec --no-startup-id alacritty -t mc -e mc
-# load feh image; swallowed by home - workspace 1
-exec --no-startup-id feh ~/Wallpapers/DnDLogo.png --zoom 30
-
-# load unimatrix; swallowed by system - workspace 2
-exec --no-startup-id alacritty -t unimatrix -e unimatrix -a -c red -s 93 -l naAScC
-# load neofetch; swallowed by system - workspace 2
-exec --no-startup-id alacritty -t neofetch --option font.size=7.0 --hold -e neofetch
-# load BpyTOP; swallowed by system - workspace 2
-exec --no-startup-id alacritty -t bpytop -e bpytop
-
-# load mpc player with add songs and play in random mode
-exec --no-startup-id mpc add / && mpc random on && mpc play
-# load ncmpcpp; swallowed by music - workspace 3
-exec --no-startup-id alacritty -t ncmpcpp -e ncmpcpp
-# load cava; swallowed by music - workspace 3
-exec --no-startup-id alacritty -t cava -e cava
-
+# Populate workspace 4
 # load firefox; swallowed by web - workspace 4
-exec --no-startup-id firefox
+# exec --no-startup-id firefox
+
+# Populate workspace 3
+# load mpc player with add songs and play in random mode
+# exec --no-startup-id mpc add / && mpc random on && mpc play
+# load ncmpcpp; swallowed by music - workspace 3
+# exec --no-startup-id alacritty -t ncmpcpp -e ncmpcpp
+# load cava; swallowed by music - workspace 3
+# exec --no-startup-id alacritty -t cava -e cava
+
+# Populate workspace 2
+# load unimatrix; swallowed by system - workspace 2
+# exec --no-startup-id alacritty -t unimatrix -e unimatrix -a -c red -s 93 -l naAScC
+# load neofetch; swallowed by system - workspace 2
+# exec --no-startup-id alacritty -t neofetch --option font.size=7.0 --hold -e neofetch
+# load BpyTOP; swallowed by system - workspace 2
+# exec --no-startup-id alacritty -t bpytop -e bpytop
+
+# Populate workspace 1
+# load mc file manager; swallowed by home - workspace 1
+# exec --no-startup-id alacritty -t mc -e mc
+# load feh image; swallowed by home - workspace 1
+# exec --no-startup-id feh ~/Wallpapers/DnDLogo.png --zoom 35
 
 # Assign specific apps to specific workspaces
 assign [class="firefox"] $ws4
 assign [class="mpv"] $ws5
+assign [class="discord"] $ws6
 assign [class="Steam"] $ws6
 assign [class="libreoffice"] $ws7
 assign [class="Gimp-2.10"] $ws8

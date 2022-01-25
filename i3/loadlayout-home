@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Basic bash script:
+# To launch i3 workspace and 
+# populate with relevant contenti
+
+WKSP=$1
+
+i3-msg "workspace $WKSP; append_layout ~/.config/i3/wksp-home.json"
+
+i3-msg "exec --no-startup-id alacritty -t mc -e mc"
+i3-msg "exec --no-startup-id feh ~/Wallpapers/DnDLogo.png --zoom 35"
+

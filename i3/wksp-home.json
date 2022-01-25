@@ -6,25 +6,25 @@
     "nodes": [
         {
             "border": "none",
-            "name": "Alacritty",
-            "percent": 0.7,
-            "swallows": [
-                {
-                    "class": "Alacritty",
-                    "instance": "Alacritty",
-					"title": "mc"
-                }
-            ]
-        },
-        {
-            "border": "none",
             "name": "feh",
-            "percent": 0.3,
+            "percent": 0.35,
             "swallows": [
                 {
                     "class": "feh",
                     "instance": "feh"
                 }
+            ]
+        },
+        {
+            "border": "none",
+            "name": "Alacritty",
+            "percent": 0.65,
+            "swallows": [
+                {
+                    "class": "Alacritty",
+                    "instance": "Alacritty",
+					"title": "mc"
+   				}
             ]
         }
     ]
