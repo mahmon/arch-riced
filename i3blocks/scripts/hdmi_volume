@@ -7,9 +7,17 @@
 # Availabe in the AUR
 
 ICON=$(echo -e '\uF028')
-VOLUME=$(amixer -M get PCM | grep Right| grep % | awk '{print $5}'|sed 's/[^0-9\%]//g')
+SOUNDON=$(amixer -M get IEC958,0 | grep Mono: |  awk '{print $3}'| sed 's/[^a-z\%]//g')
+VOLUME=$(amixer -M get spdif1Master | grep Right | grep % | awk '{print $4}'| sed 's/[^0-9\%]//g')
+TEXT=$VOLUME
 
-FULLTEXT=" <span color='$icocol'>$ICON</span> $VOLUME  "
+if [ $SOUNDON = 'off' ]
+then
+	ICON=$(echo -e '\uF6A9')
+	TEXT='--'
+fi
+
+FULLTEXT=" <span color='$icocol'>$ICON</span> $TEXT  "
 SHORTEXT=""
 
 echo "$FULLTEXT"
