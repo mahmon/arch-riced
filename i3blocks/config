@@ -19,25 +19,12 @@ command=scripts/wifi
 markup=pango
 interval=10
 
-[Brightness]
+[HDMI-Volume]
 icocol=#cf0a0a
-command=scripts/backlight
+command=scripts/hdmi_volume
 markup=pango
 interval=once
 signal=10
-
-[Volume]
-icocol=#cf0a0a
-command=scripts/volume
-markup=pango
-interval=once
-signal=10
-
-[Battery]
-# set icon color in script
-command=scripts/battery
-markup=pango
-interval=3
 
 [Time]
 icocol=#cf0a0a
