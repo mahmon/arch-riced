@@ -1,0 +1,40 @@
+#!/bin/bash
+#
+# Basic bash script:
+# To display information on current active sound output
+#
+# Requires package ttf-font-awesome
+# Availabe in the AUR
+
+HDPHN_ICON=$(echo -e '\uF025')
+SPKR_ICON=$(echo -e '\uF028')
+
+HDPHN_STATUS=$(amixer -M get Headphone | grep Left: |  awk '{print $4}'| sed 's/[^a-z\%]//g')
+SPKR_STATUS=$(amixer -M get IEC958,0 | grep Mono: |  awk '{print $3}'| sed 's/[^a-z\%]//g')
+
+HDPHN_VOLUME=$(amixer -M get Headphone+LO | grep Right: | awk '{print $5}'| sed 's/[^0-9\%]//g')
+SPKR_VOLUME=$(amixer -M get spdif1Master | grep Right: | awk '{print $4}'| sed 's/[^0-9\%]//g')
+
+icon=''
+volume=''
+
+if [ $HDPHN_STATUS = 'on' ]
+then
+	icon=$HDPHN_ICON
+	volume=$HDPHN_VOLUME
+fi
+
+if [ $SPKR_STATUS = 'on' ]
+then
+	icon=$SPKR_ICON
+	volume=$SPKR_VOLUME
+fi
+
+FULLTEXT=" <span color='$icocol'>$icon</span> $volume  "
+SHORTEXT=""
+
+echo "$FULLTEXT"
+echo "$SHORTEXT"
+
+exit 0
+

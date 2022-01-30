@@ -13,15 +13,15 @@ command=scripts/window
 markup=pango
 interval=repeat
 
-[wifi]
+[Wifi]
 icocol=#cf0a0a
 command=scripts/wifi
 markup=pango
 interval=10
 
-[HDMI-Volume]
+[Volume-Status]
 icocol=#cf0a0a
-command=scripts/hdmi_volume
+command=scripts/volume_status
 markup=pango
 interval=once
 signal=10

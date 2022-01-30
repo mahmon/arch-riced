@@ -190,7 +190,7 @@ bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3lock/i3lock_script
 
 # multimedia keybinds
 # HDMI - toggle mute, volume up, volume down
-bindcode 121 exec --no-startup-id amixer -q set IEC958 toggle && pkill -RTMIN+10 i3blocks 
+bindcode 121 exec --no-startup-id amixer -q set IEC958 toggle && amixer -q set Headphone toggle && pkill -RTMIN+10 i3blocks 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -M set spdif1Master 2%+ && pkill -RTMIN+10 i3blocks 
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q -M set spdif1Master 2%- && pkill -RTMIN+10 i3blocks 
 # Headphones - toggle mute, volume up, volume down
