@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# Basic bash script:
+# To attentuate an unmuted volume level using amixer
+#
+# Requires package ttf-font-awesome
+# Availabe in the AUR
+
+HDPHN_STATUS=$(amixer -M get Headphone | grep Left: |  awk '{print $4}'| sed 's/[^a-z\%]//g')
+SPKR_STATUS=$(amixer -M get IEC958,0 | grep Mono: |  awk '{print $3}'| sed 's/[^a-z\%]//g')
+device=''
+
+if [ $HDPHN_STATUS = 'on' ]
+then
+	device='Headphone+LO'
+elif [ $SPKR_STATUS = 'on' ]
+then
+	device='spdif1Master'
+fi
+
+amixer -q -M set $device 2%-
+pkill -RTMIN+10 i3blocks
+
+exit

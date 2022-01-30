@@ -16,9 +16,9 @@
 #
 # Adapted by Wayne Murphy-Jerrett
 
-# Set the interface to wlan0
+# Set the interface to the code for wifi card, for example wlan0
 if [[ -z "$INTERFACE" ]] ; then
-    INTERFACE="${BLOCK_INSTANCE:-wlan0}"
+    INTERFACE="${BLOCK_INSTANCE:-wlo1}"
 fi
 
 # Set icon
